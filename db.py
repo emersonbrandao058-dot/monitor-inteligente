@@ -2,12 +2,13 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv()  # só funciona local
 
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_NAME = os.getenv("DB_NAME", "monitor")
+# Tenta pegar do .env local, senão pega das variáveis do Cloud
+DB_HOST = os.getenv("DB_HOST") or os.environ.get("DB_HOST", "localhost")
+DB_USER = os.getenv("DB_USER") or os.environ.get("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD") or os.environ.get("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME") or os.environ.get("DB_NAME", "monitor")
 
 def conectar_banco():
     return mysql.connector.connect(
