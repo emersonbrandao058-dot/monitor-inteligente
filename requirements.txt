@@ -5,4 +5,3 @@ psutil==5.9.6
 mysql-connector-python==8.0.34
 python-dotenv==1.0.0
 requests==2.32.5
-
