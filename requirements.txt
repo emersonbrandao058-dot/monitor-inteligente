@@ -1,7 +1,7 @@
 streamlit
+streamlit-autorefresh
 pandas
 psutil
 mysql-connector-python
 python-dotenv
 requests
-
