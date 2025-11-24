@@ -291,7 +291,12 @@ elif menu == "Monitor Inteligente":
                 st.session_state.usuario_logado = False
                 st.session_state.usuario_nome = ""
                 st.session_state.usuario_email = ""
-                st.experimental_rerun()
+            def rerun():
+                st.rerun()
+
+    
+
+               
         else:
             st.markdown("**Não logado**")
 
